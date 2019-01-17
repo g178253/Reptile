@@ -21,8 +21,7 @@ namespace Reptile
 		ReptileCore() {}
 		ReptileCore(const TextSource& ts, const TextProcessor& tp)
 			: ts{ts}, tp{tp} {}
-		void generate_result() const;
-		virtual void set_result(std::string value)=0;
+		std::string& generate_result() const;
 	
 	private:
 		TextSource ts;

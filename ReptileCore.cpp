@@ -3,10 +3,10 @@
 
 namespace Reptile
 {
-	void ReptileCore::generate_result() const
+	std::string& ReptileCore::generate_result() const
 	{
 		auto src = ts.get_source();
 		auto result = tp.execute(src);
-		set_result(result);
+		return result;
 	}
 }
