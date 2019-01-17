@@ -8,5 +8,6 @@
 #define PCH_H
 
 // TODO: 添加要在此处预编译的标头
+#include <string>
 
 #endif //PCH_H
