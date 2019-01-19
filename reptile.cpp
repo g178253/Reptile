@@ -6,7 +6,9 @@
 
 int main()
 {
-	auto douban = DoubanReptile();
+	TextSource ts;
+	TextProcessor tp;
+	auto douban = DoubanReptile(ts, tp);
 	douban.print();
 	std::cout << "\n"; 
 }
