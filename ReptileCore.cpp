@@ -3,10 +3,20 @@
 
 namespace Reptile
 {
-	std::string& ReptileCore::generate_result() const
+	std::string ReptileCore::generate_result()
 	{
 		auto src = ts.get_source();
-		auto result = tp.execute(src);
-		return result;
+		tp.execute(src);
+		return src;
+	}
+
+	void TextProcessor::execute(std::string& src)
+	{
+		std::cout << src;
+	}
+
+	std::string TextSource::get_source()
+	{
+		return std::string("¹þ¹þ");
 	}
 }

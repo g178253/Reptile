@@ -21,6 +21,9 @@
     <ClInclude Include="ReptileCore.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DoubanReptile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -30,6 +33,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ReptileCore.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubanReptile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -6,13 +6,13 @@ namespace Reptile
 	class TextProcessor
 	{
 	public:
-		std::string& execute(const std::string& src) const;
+		void execute(std::string& src);
 	};
 
 	class TextSource
 	{
 	public:
-		std::string& get_source() const;
+		std::string get_source();
 	};
 
 	class ReptileCore
@@ -21,7 +21,7 @@ namespace Reptile
 		ReptileCore() {}
 		ReptileCore(const TextSource& ts, const TextProcessor& tp)
 			: ts{ts}, tp{tp} {}
-		std::string& generate_result() const;
+		std::string generate_result();
 	
 	private:
 		TextSource ts;
