@@ -3,11 +3,13 @@
 
 using namespace Reptile;
 
-class DoubanReptile : public Reptile::ReptileCore
+class DoubanReptile : public ReptileCore
 {
 public:
-	DoubanReptile(const TextSource& ts, const TextProcessor& tp)
-		: ReptileCore(ts, tp) {}
 	void print();
+
+	// Í¨¹ý ReptileCore ¼Ì³Ð¡£
+	virtual string get_url() override;
+	virtual string get_command() override;
 };
 

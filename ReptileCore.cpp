@@ -1,22 +1,34 @@
 #include "pch.h"
 #include "ReptileCore.h"
+#include "Net.h"
 
 namespace Reptile
 {
-	std::string ReptileCore::generate_result()
+	using namespace std;
+
+	string ReptileCore::generate_result()
 	{
-		auto src = ts.get_source();
+		auto url = get_url();
+		auto cmd = get_command();
+		auto src = ts.get_source(url, cmd);
 		tp.execute(src);
 		return src;
 	}
 
-	void TextProcessor::execute(std::string& src)
+	void TextProcessor::execute(string& src)
 	{
-		std::cout << src;
+		cout << src;
 	}
 
-	std::string TextSource::get_source()
+	TextSource::TextSource() : pNet{ new Net{} } {}
+	TextSource::~TextSource() {}
+
+	string TextSource::get_source(const string& url, const string& cmd)
 	{
-		return std::string("¹þ¹þ");
+		pNet->start(url, 80);
+		pNet->send_command(cmd);
+		auto r = pNet->get_string();
+		pNet->stop();
+		return r;
 	}
 }

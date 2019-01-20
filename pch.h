@@ -7,9 +7,23 @@
 #ifndef PCH_H
 #define PCH_H
 
-// TODO: 添加要在此处预编译的标头
 #include <string>
 #include <memory>
 #include <iostream>
+
+//************* 以下为 win socket 必须 *************//
+// The declarations in the Winsock.h header file will conflict with the declarations
+// in the Winsock2.h header file required by Windows Sockets 2.0.
+// The WIN32_LEAN_AND_MEAN macro prevents the Winsock.h from being included by the Windows.h header.
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+
+#include <windows.h>  // including the Winsock.h header file for Windows Sockets 1.1.
+#include <winsock2.h> // includes core elements from the Windows.h header file
+#include <ws2tcpip.h> // should be placed before the Iphlpapi.h header file
+#include <iphlpapi.h> // IP Helper APIs
+
+#pragma comment(lib, "Ws2_32.lib")
 
 #endif //PCH_H
